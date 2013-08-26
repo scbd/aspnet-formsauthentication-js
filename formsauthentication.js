@@ -47,8 +47,8 @@ FormsAuthentication.prototype.encrypt = function(ticket) {
 	writer.writeDate(ticket.expiration);
 	writer.writeBoolean(ticket.isPersistent);
 	writer.writeString(ticket.name);
-	writer.writeString(ticket.cookiePath);
 	writer.writeString(ticket.userData);
+	writer.writeString(ticket.cookiePath);
 
 	var decryptedTicket = writer.final();
 
@@ -69,7 +69,7 @@ FormsAuthentication.prototype.encrypt = function(ticket) {
 
 	var encryptedTicket = Buffer.concat([encryptedTicketData, hash]);
 
-	return encryptedTicket.toString('hex');
+	return encryptedTicket.toString('hex').toUpperCase();
 };
 
 //============================================================
@@ -112,8 +112,8 @@ FormsAuthentication.prototype.decrypt = function(encryptedTicket) {
 		expiration:	  reader.readDate(),
 		isPersistent: reader.readUInt8(),
 		name:         reader.readString(),
-		cookiePath:   reader.readString(),
 		userData:     reader.readString(),
+		cookiePath:   reader.readString(),
 	};
 
 	return ticket;
