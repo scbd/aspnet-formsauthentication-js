@@ -1,6 +1,6 @@
 {
   "name"          : "aspnet-formsauthentication",
-  "version"       : "0.0.4",
+  "version"       : "0.0.5",
   "description"   : "A minimal JavaScript implementation of ASP.NET FormsAuthentication Encrypt() and Decrypt() methods",
   "contributors": [ { "name": "Philippe Leblond", "email": "philippe.leblond@cbd.int" }, { "name": "Stephane Bilodeau", "email": "stephane.bilodeau@cbd.int" } ],
   "homepage"      : "https://github.com/scbd/aspnet-formsauthentication-js",

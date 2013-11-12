@@ -42,6 +42,10 @@ FormsAuthentication.prototype.initialize = function(options) {
 	if(this.options.encryptionKey && this.options.encryptionKey.length*8 == 256) this.options.encryption = "aes-256-cbc";
 	if(this.options.encryptionKey)   this.options.ramdomBlockSize = this.options.encryptionKey.length;
 
+	if(this.options.validationKey && this.options.validationKey.length*8 <= 160) this.options.validation = "SHA1 ";
+	if(this.options.validationKey && this.options.validationKey.length*8  > 160) this.options.validation = "SHA256";
+	if(this.options.validationKey && this.options.validationKey.length*8  > 256) this.options.validation = "SHA512";
+
 	if(options && options.encryption) this.options.encryption = options.encryption;
 	if(options && options.validation) this.options.validation = options.validation;
   
