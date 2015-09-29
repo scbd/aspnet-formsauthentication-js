@@ -55,6 +55,7 @@ FormsAuthentication.prototype.initialize = function(options) {
 	if(this.options.validation=="SHA512") this.options.validationHashLength = 512;
 
 	if(options && options.validationHashLength) this.options.validation = options.validationHashLength;
+	if(options && options.ramdomBlockSize!==undefined) this.options.ramdomBlockSize = options.ramdomBlockSize;
 
 	this.options.encryptionIv.fill(0);
 };
