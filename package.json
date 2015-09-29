@@ -8,5 +8,11 @@
   "keywords"      : ["authentication", "asp.net"],
   "repository"    : {"type": "git", "url": "git@github.com:scbd/aspnet-formsauthentication-js.git"},
   "main"          : "formsauthentication.js",
-  "license"       : "MIT"
+  "license"       : "MIT",
+  "devDependencies": {
+      "mocha": "2.3.3"
+  },
+  "scripts"       : {
+      "test": "node_modules/.bin/mocha"
+  }
 }
